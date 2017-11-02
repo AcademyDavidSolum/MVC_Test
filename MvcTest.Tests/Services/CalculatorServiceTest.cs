@@ -1,0 +1,104 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MvcTestServices.Interfaces;
+using MvcTestServices.Services;
+
+namespace MvcTest.Tests.services
+{
+    [TestClass]
+    public class CalculatorServiceTest
+    {
+        private readonly Random _random = new Random();
+
+        /// <summary>
+        /// Test the CalculatorService Add method
+        /// </summary>
+        [TestMethod]
+        public void Add()
+        {
+            // Arrange
+            ICalculatorService service = new CalculatorService();
+            var first = (decimal)_random.NextDouble();
+            var second = (decimal)_random.NextDouble();
+
+            // Act
+            var result = service.Add(first, second);
+
+            // Assert
+            Assert.AreEqual(first + second, result);
+        }
+
+        /// <summary>
+        /// Test the CalculatorService Subtract method
+        /// </summary>
+        [TestMethod]
+        public void Subtract()
+        {
+            // Arrange
+            ICalculatorService service = new CalculatorService();
+            var first = (decimal)_random.NextDouble();
+            var second = (decimal)_random.NextDouble();
+
+            // Act
+            var result = service.Subtract(first, second);
+
+            // Assert
+            Assert.AreEqual(first - second, result);
+        }
+
+        /// <summary>
+        /// Test the CalculatorService Multiply method
+        /// </summary>
+        [TestMethod]
+        public void Multiply()
+        {
+            // Arrange
+            ICalculatorService service = new CalculatorService();
+            var first = (decimal)_random.NextDouble();
+            var second = (decimal)_random.NextDouble();
+
+            // Act
+            var result = service.Multiply(first, second);
+
+            // Assert
+            Assert.AreEqual(first * second, result);
+        }
+
+        /// <summary>
+        /// Test the CalculatorService Divide method
+        /// </summary>
+        [TestMethod]
+        public void Divide()
+        {
+            // Arrange
+            ICalculatorService service = new CalculatorService();
+            var first = (decimal)_random.NextDouble();
+            var second = (decimal)_random.NextDouble();
+
+            // Act
+            var result = service.Divide(first, second);
+
+            // Assert
+            Assert.AreEqual(first / second, result);
+        }
+
+        /// <summary>
+        /// Test the CalculatorService Divide method, throwing ArgumentException
+        /// </summary>
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DivideWithZeroDivisorThrowsArgumentException()
+        {
+            // Arrange
+            ICalculatorService service = new CalculatorService();
+            var first = (decimal)_random.NextDouble();
+            var second = 0M; // This will cause ArgumentException
+
+            // Act
+            var result = service.Divide(first, second);
+
+            // Assert
+            Assert.AreEqual(first / second, result);
+        }
+    }
+}
