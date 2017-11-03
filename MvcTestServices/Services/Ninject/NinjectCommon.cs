@@ -32,7 +32,9 @@ namespace MvcTestServices.Services.Ninject
         /// <param name="kernel">The kernel.</param>
         public static void RegisterDependencies(IKernel kernel)
         {
-            kernel.Bind<ICalculatorService>().To<CalculatorService>().InSingletonScope().Named("SingletonCalculator");
+            kernel.Bind<ICalculatorService>().To<CalculatorService>()
+                .InSingletonScope()
+                .Named("SingletonCalculator");
             kernel.Bind<ICalculatorService>().To<CalculatorService>()
                 .When(x => x.Parameters.FirstOrDefault()?.Name == null)
                 .InTransientScope();

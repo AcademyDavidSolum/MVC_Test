@@ -3,7 +3,7 @@ using MvcTestServices.Interfaces;
 using MvcTestServices.Services;
 using Xunit;
 
-namespace MvcTest.Tests.Services.XUnit
+namespace MvcTest.Tests.XUnit.Services
 {
     public class CalculatorServiceTest
     {

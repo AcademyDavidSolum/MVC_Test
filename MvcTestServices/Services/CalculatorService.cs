@@ -13,7 +13,6 @@ namespace MvcTestServices.Services
         /// <returns>The mathematical sum of the two values</returns>
         public decimal Add(decimal first, decimal second)
         {
-            throw new Exception("CalculatorService");
             return first + second;
         }
 
