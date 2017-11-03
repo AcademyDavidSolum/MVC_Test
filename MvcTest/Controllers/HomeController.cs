@@ -24,7 +24,8 @@ namespace MvcTest.Controllers
             ViewBag.Message = $"David Solum's MVC Test: 4 + 6 = {_calculatorService.Add(4, 6)}";
 
             // Let's email this important calculation to Dave
-            _emailService.Send("dave@davidsolum.com", "dave@davidsolum.com", "Calculation", ViewBag.Message);
+            // (Note: this currently throws a NotImplementedException)
+            //_emailService.Send("dave@davidsolum.com", "dave@davidsolum.com", "Calculation", ViewBag.Message);
 
             return View();
         }
