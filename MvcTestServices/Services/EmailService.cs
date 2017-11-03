@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using MvcTestServices.Interfaces;
 
 namespace MvcTestServices.Services
@@ -16,7 +17,7 @@ namespace MvcTestServices.Services
         public bool Send(string from, string to, string subject, string body)
         {
             // TODO: Send email here
-            return true;
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -29,8 +30,7 @@ namespace MvcTestServices.Services
         /// <returns>A Task whose Result represents success or failure</returns>
         public async Task<bool> SendAsync(string from, string to, string subject, string body)
         {
-            // TODO: Send email asynchronously here
-            return true;
+            throw new NotImplementedException();
         }
     }
 }
